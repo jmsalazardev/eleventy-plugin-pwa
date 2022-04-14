@@ -1,17 +1,16 @@
 const shimmer = require("shimmer");
+const Eleventy = require("@11ty/eleventy/src/Eleventy");
 
 module.exports = {
-  configFunction: (__, options = {}) => {
+  configFunction: (cfg, options = {}) => {
+    process.on("unhandledRejection", (reason) => {
+      console.log("Reason: " + reason);
+    });
     function postBuild() {
-      const Eleventy = require("@11ty/eleventy/src/Eleventy");
-      shimmer.wrap(Eleventy.prototype, "finish", function(orig) {
-        const outputDir = new Eleventy().outputDir;
-        process.on("unhandledRejection", (reason) => {
-          console.log("Reason: " + reason);
-        });
-        return function() {
+      shimmer.wrap(Eleventy.prototype, "logFinished", function (orig) {
+        return function () {
           const swBuild = require("./src/builder");
-          swBuild(options, outputDir).then((res) => console.log(res));
+          swBuild(options, cfg.dir.output).then((res) => console.log(res));
           return orig.apply(this);
         };
       });
