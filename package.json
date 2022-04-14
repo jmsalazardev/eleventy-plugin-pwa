@@ -1,11 +1,11 @@
 {
-  "name": "eleventy-plugin-pwa",
-  "version": "1.0.8",
+  "name": "11ty-plugin-pwa",
+  "version": "2.0.0",
   "description": "An Eleventy plugin to generate service worker for PWA using Google Workbox",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okitavera/eleventy-plugin-pwa.git"
+    "url": "git+https://github.com/jmsalazardev/eleventy-plugin-pwa.git"
   },
   "keywords": [
     "eleventy-plugin",
@@ -13,17 +13,9 @@
     "workbox",
     "pwa"
   ],
-  "author": {
-    "name": "Nanda Oktavera",
-    "email": "codeharuka.yusa@gmail.com",
-    "url": "https://okitavera.me/"
-  },
+  "author": "José Miguel Salazar <jmsalazar.dev@gmail.com> (https://jmsalazar.dev)",
   "contributors": [
-    {
-      "name": "José Miguel Salazar",
-      "email": "jmsalazar.dev@gmail.com",
-      "url": "https://jmsalazar.dev"
-    }
+    "Nanda Oktavera <codeharuka.yusa@gmail.com> (https://okitavera.me/)"
   ],
   "license": "MIT",
   "dependencies": {
@@ -42,5 +34,12 @@
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
+  },
+  "bugs": {
+    "url": "https://github.com/jmsalazardev/eleventy-plugin-pwa/issues"
+  },
+  "homepage": "https://github.com/jmsalazardev/eleventy-plugin-pwa#readme",
+  "directories": {
+    "test": "test"
   }
 }
